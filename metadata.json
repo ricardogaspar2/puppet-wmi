@@ -1,0 +1,19 @@
+{
+  "name": "souldo-wmi",
+  "version": "0.1.0",
+  "author": "Matthew Stone",
+  "summary": "A defined type for managing Windows WMI Objects.",
+  "license": "Apache 2.0",
+  "source": "https://github.com/matthewrstone/puppet-wmi",
+  "project_page": "https://github.com/matthewrstone/puppet-wmi",
+  "issues_url": "https://github.com/matthewrstone/puppet-wmi/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_range": ">= 1.0.0",
+      "name": "puppetlabs-powershell",
+      "version_range": ">=1.0.3"
+    }
+  ]
+}
+
