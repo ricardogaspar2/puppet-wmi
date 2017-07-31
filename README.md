@@ -19,7 +19,8 @@ To use the wmi type, you must specify as least the namespace, class, property an
 Be aware that you **should always use the class method** whenever it is available. That's the correct usage. Otherwise the property might not be changed properly.
 
 
-This example will set the property value directly without calling any method. Because there isn't any available.
+### Using properties
+These examples will set the property value directly without calling any method. Because there isn't any available.
 ```
 wmi { 'Change RDS RDP-TCP Environment Setting':
   wmi_namespace => 'root/cimv2/terminalservices',
@@ -28,6 +29,17 @@ wmi { 'Change RDS RDP-TCP Environment Setting':
   wmi_value     => '2',
 }
 ```
+
+```
+wmi { 'Install SSL Certificate for RDP':
+    wmi_namespace => 'root/cimv2/terminalservices',
+    wmi_class     => 'Win32_TSGeneralSetting',
+    wmi_property  => 'SSLCertificateSHA1Hash',
+    wmi_value     => '669A9C961733A05F228CD12AA9C6D5DAFE48FA58', 
+  }
+```
+
+### Using methods
 These examples use specified methods.
 ```
 wmi { 'Remote Desktop - Allow Connections' :
@@ -38,6 +50,7 @@ wmi { 'Remote Desktop - Allow Connections' :
   wmi_method    => 'SetAllowTSConnections',
 }
 ```
+
 ```
 wmi { 'Remote Desktop - Set Encription Level':
   wmi_namespace => 'root/cimv2/terminalservices',
@@ -47,3 +60,4 @@ wmi { 'Remote Desktop - Set Encription Level':
   wmi_method    => 'SetEncryptionLevel',
 }
 ```
+
