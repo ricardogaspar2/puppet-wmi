@@ -24,7 +24,7 @@ wmi { 'Change RDS RDP-TCP Environment Setting':
   wmi_namespace => 'root/cimv2/terminalservices',
   wmi_class     => 'Win32_TSEnvironmentSetting',
   wmi_property  => 'InitialProgramPolicy',
-  wmi_value     => 2,
+  wmi_value     => '2',
 }
 ```
 These examples use specified methods.
@@ -33,7 +33,7 @@ wmi { 'Remote Desktop - Allow Connections' :
   wmi_namespace => 'root/cimv2/terminalservices',
   wmi_class     => 'Win32_TerminalServiceSetting',
   wmi_property  => 'AllowTSConnections',
-  wmi_value     => 1,
+  wmi_value     => '1',
   wmi_method    => 'SetAllowTSConnections',
 }
 ```
@@ -42,7 +42,7 @@ wmi { 'Remote Desktop - Set Encription Level':
   wmi_namespace => 'root/cimv2/terminalservices',
   wmi_class     => 'Win32_TSGeneralSetting',
   wmi_property  => 'MinEncryptionLevel'
-  wmi_value     => 1,
+  wmi_value     => '1',
   wmi_method    => 'SetEncryptionLevel',
 }
 ```
