@@ -1,4 +1,8 @@
-# wmi
+# Module wmi
+Original project from Puppet Forge:
+  https://forge.puppet.com/souldo/wmi
+  https://github.com/matthewrstone/puppet-wmi
+changed by @rchavesg (Ricardo Gaspar)
 
 ## Overview
 
@@ -10,17 +14,35 @@ This is a fairly simple type to set the values for WMI objects so you don't have
 
 ## Usage
 
-To use the wmi type, you must specify as least the namespace, class, property and value (as shown below).  You can also specify a value for `wmi_method` if it does not follow the default syntax of prefixing the property with `set`.
+To use the wmi type, you must specify as least the namespace, class, property and value (as shown below). When a value for `wmi_method` is not provided it will change only the property specified. Otherwise, it will use the method provided.
+Be aware that you **should always use the class method** whenever it is available. That's the correct usage. Otherwise the property might not be changed properly.
 
-	wmi { 'Remote Desktop - Network Level Authentication' :
-	  wmi_namespace => 'root/cimv2/terminalservices',
-	  wmi_class     => 'Win32_TSGeneralSetting',
-	  wmi_property  => 'UserAuthenticationRequired',
-	  wmi_value     => 1,
-	}
-  	wmi { 'Remote Desktop - Allow Connections' :
-    	  wmi_namespace => 'root/cimv2/terminalservices',
-    	  wmi_class     => 'Win32_TerminalServiceSetting',
-    	  wmi_property  => 'AllowTSConnections',
-    	  wmi_value     => 1
-  	}
+
+This example will set the property value directly without calling any method. Because there isn't any available.
+```
+wmi { 'Change RDS RDP-TCP Environment Setting':
+  wmi_namespace => 'root/cimv2/terminalservices',
+  wmi_class     => 'Win32_TSEnvironmentSetting',
+  wmi_property  => 'InitialProgramPolicy',
+  wmi_value     => 2,
+}
+```
+These examples use specified methods.
+```
+wmi { 'Remote Desktop - Allow Connections' :
+  wmi_namespace => 'root/cimv2/terminalservices',
+  wmi_class     => 'Win32_TerminalServiceSetting',
+  wmi_property  => 'AllowTSConnections',
+  wmi_value     => 1,
+  wmi_method    => 'SetAllowTSConnections',
+}
+```
+```
+wmi { 'Remote Desktop - Set Encription Level':
+  wmi_namespace => 'root/cimv2/terminalservices',
+  wmi_class     => 'Win32_TSGeneralSetting',
+  wmi_property  => 'MinEncryptionLevel'
+  wmi_value     => 1,
+  wmi_method    => 'SetEncryptionLevel',
+}
+```
