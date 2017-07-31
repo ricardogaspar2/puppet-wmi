@@ -3,7 +3,7 @@ Original project from Puppet Forge:
  - https://forge.puppet.com/souldo/wmi
  - https://github.com/matthewrstone/puppet-wmi
 
-changed by @rchavesg (Ricardo Gaspar)
+changed by @ricardogaspar2 (Ricardo Gaspar)
 
 ## Overview
 
