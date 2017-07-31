@@ -1,7 +1,8 @@
 # Module wmi
 Original project from Puppet Forge:
-  https://forge.puppet.com/souldo/wmi
-  https://github.com/matthewrstone/puppet-wmi
+ - https://forge.puppet.com/souldo/wmi
+ - https://github.com/matthewrstone/puppet-wmi
+
 changed by @rchavesg (Ricardo Gaspar)
 
 ## Overview
