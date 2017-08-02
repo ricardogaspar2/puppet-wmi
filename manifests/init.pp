@@ -25,7 +25,7 @@
 #  wmi_namespace => 'root/cimv2/terminalservices',
 #  wmi_class     => 'Win32_TSEnvironmentSetting',
 #  wmi_property  => 'InitialProgramPolicy',
-#  wmi_value     => 2,
+#  wmi_value     => '2',
 #}
 #
 #
@@ -35,7 +35,7 @@
 #  wmi_namespace => 'root/cimv2/terminalservices',
 #  wmi_class     => 'Win32_TerminalServiceSetting',
 #  wmi_property  => 'AllowTSConnections',
-#  wmi_value     => 1,
+#  wmi_value     => '1',
 #  wmi_method    => 'SetAllowTSConnections',
 #}
 #
@@ -43,7 +43,7 @@
 #  wmi_namespace => 'root/cimv2/terminalservices',
 #  wmi_class     => 'Win32_TSGeneralSetting',
 #  wmi_property  => 'MinEncryptionLevel'
-#  wmi_value     => 1,
+#  wmi_value     => '1',
 #  wmi_method    => 'SetEncryptionLevel',
 #}
 #
