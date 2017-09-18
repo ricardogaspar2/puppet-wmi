@@ -1,12 +1,12 @@
 {
-  "name": "souldo-wmi",
-  "version": "0.1.0",
-  "author": "Matthew Stone",
-  "summary": "A defined type for managing Windows WMI Objects.",
+  "name": "ricardogaspar2-wmi",
+  "version": "0.1.1",
+  "author": "Ricardo Gaspar",
+  "summary": "A defined type for managing WMI objects with Puppet. Improved version",
   "license": "Apache 2.0",
-  "source": "https://github.com/matthewrstone/puppet-wmi",
-  "project_page": "https://github.com/matthewrstone/puppet-wmi",
-  "issues_url": "https://github.com/matthewrstone/puppet-wmi/issues",
+  "source": "https://github.com/ricardogaspar2/puppet-wmi",
+  "project_page": "https://github.com/ricardogaspar2/puppet-wmi",
+  "issues_url": "https://github.com/ricardogaspar2/puppet-wmi/issues",
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
